@@ -40,4 +40,12 @@ class MotionAccelerator {
       this.speed = -this.maxSpeed;
     }
   }
+
+  isZero() {
+    if (Math.abs(this.speed) < this.zeroThreshold) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
