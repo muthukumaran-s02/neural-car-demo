@@ -22,7 +22,7 @@ class Controls {
           this.backward = true;
           break;
       }
-      // console.table(this);
+      console.table(this);
     };
     document.onkeyup = (event) => {
       switch (event.key) {
@@ -39,7 +39,7 @@ class Controls {
           this.backward = false;
           break;
       }
-      // console.table(this);
+      console.table(this);
     };
   }
 }
