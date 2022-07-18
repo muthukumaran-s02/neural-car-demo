@@ -3,13 +3,16 @@ h1 {
 }
 
 body {
-  padding: 0%;
-  margin: 0%;
+  margin: 0;
+  background-color: darkgray;
+  overflow: hidden;
+  text-align: center;
 }
 
 canvas.gameworld {
   padding: 10px;
-  width: 100px;
-  height: 500px;
+  /* width: 200px;
+  height: 600px; */
   border: 1px red;
+  background-color: lightgray;
 }
