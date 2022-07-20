@@ -13,7 +13,7 @@ class Car {
     this.maxSpeed = 10;
     this.angle = 0;
     this.color = color;
-    this.speedAccelerator = new MotionAccelerator(2, 1, 10, 0.1, 1);
+    this.speedAccelerator = new MotionAccelerator(2, 1, 10, 0.2, 1);
     this.angleAccelerator = new MotionAccelerator(0.04, 0.04, 1.8, 0.01, 0.02);
   }
 
@@ -50,6 +50,10 @@ class Car {
       this.angleAccelerator.tick();
     }
 
+    if (this.x < 0) this.x = 0;
+    if (this.y < 0) this.y = 0;
+    if (this.x > this.world.width) this.x = this.world.width;
+    if (this.y > this.world.height) this.y = this.world.height;
     // console.log('Angle ' + this.angleAccelerator.speed);
     this.y -=
       this.speedAccelerator.speed * Math.cos(this.angleAccelerator.speed);
