@@ -1,6 +1,7 @@
-console.log('Hellow world!');
+console.log('Loading app');
 const gameworld = document.getElementById('world');
 const ctx = gameworld.getContext('2d');
+const world = new World(gameworld);
 const car = new Car(100, 500, 30, 60, 'blue', gameworld);
 
 function load() {
@@ -12,6 +13,7 @@ function load() {
 
 function animate() {
   car.update();
+  world.draw(ctx);
   car.draw(ctx);
   requestAnimationFrame(animate);
 }

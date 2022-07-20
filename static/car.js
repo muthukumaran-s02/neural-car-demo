@@ -18,7 +18,7 @@ class Car {
   }
 
   draw(ctx) {
-    ctx.clearRect(0, 0, world.width, world.height);
+    // ctx.clearRect(0, 0, world.width, world.height);
     // ctx.fillStyle = this.color;
 
     ctx.save();
