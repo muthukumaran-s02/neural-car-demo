@@ -18,16 +18,13 @@ class Car {
   }
 
   draw(ctx) {
-    // ctx.clearRect(0, 0, world.width, world.height);
-    // ctx.fillStyle = this.color;
+    ctx.fillStyle = this.color;
 
     ctx.save();
     ctx.translate(this.x, this.y);
     ctx.rotate(-this.angleAccelerator.speed);
 
-    ctx.beginPath();
-    ctx.rect(-this.width / 2, -this.height / 2, this.width, this.height);
-    ctx.fill();
+    ctx.fillRect(-this.width / 2, -this.height / 2, this.width, this.height);
 
     ctx.restore();
   }
