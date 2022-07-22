@@ -1,5 +1,5 @@
 class Car {
-  constructor(x, y, width, height, color, world) {
+  constructor(x, y, width, height, color, world, road) {
     this.x = x;
     this.y = y;
     this.width = width;
@@ -15,6 +15,7 @@ class Car {
     this.color = color;
     this.speedAccelerator = new MotionAccelerator(2, 1, 10, 0.2, 1);
     this.angleAccelerator = new MotionAccelerator(0.04, 0.04, 1.8, 0.01, 0.02);
+    this.road = road;
   }
 
   draw(ctx) {
@@ -52,8 +53,10 @@ class Car {
     if (this.x > this.world.width) this.x = this.world.width;
     if (this.y > this.world.height) this.y = this.world.height;
     // console.log('Angle ' + this.angleAccelerator.speed);
-    this.y -=
-      this.speedAccelerator.speed * Math.cos(this.angleAccelerator.speed);
+    //this.y -=
+    this.road.update(
+      this.speedAccelerator.speed * Math.cos(this.angleAccelerator.speed)
+    );
     this.x -=
       this.speedAccelerator.speed * Math.sin(this.angleAccelerator.speed);
   }
