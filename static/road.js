@@ -1,5 +1,5 @@
 const MARKER = 10;
-const TILE_MARKER_HEIGHT = 50;
+const TILE_MARKER_HEIGHT = 100;
 
 class Road {
   constructor(x, world, laneCount = 3, laneWidth = 60) {
@@ -19,10 +19,21 @@ class Road {
     ctx.fillRect(this.world.width - MARKER, 0, MARKER, this.world.height);
 
     //Lanes
-    this.laneCount = Math.floor(this.world.width / this.laneWidth);
+    //this.laneCount = Math.floor(this.world.width / (this.laneWidth + MARKER));
+    this.laneWidth = Math.floor(
+      (this.world.width - 2 * MARKER) / this.laneCount
+    );
 
-    for (var i = 0; i < this.laneCount; i++) {
-      
+    for (var i = 1; i < this.laneCount; i++) {
+      ctx.fillStyle = 'White';
+      for (var j = 0; j <= this.world.height; j += TILE_MARKER_HEIGHT) {
+        ctx.fillRect(
+          i * (this.laneWidth + MARKER),
+          j,
+          MARKER,
+          TILE_MARKER_HEIGHT / 2
+        );
+      }
     }
   }
 }

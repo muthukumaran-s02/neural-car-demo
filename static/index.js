@@ -3,7 +3,7 @@ const gameworld = document.getElementById('world');
 const ctx = gameworld.getContext('2d');
 const world = new World(gameworld);
 const car = new Car(100, 500, 30, 60, 'blue', gameworld);
-const road = new Road(0, gameworld, 3);
+const road = new Road(0, gameworld, 4);
 
 function load() {
   gameworld.height = window.innerHeight - 200;
