@@ -20,13 +20,13 @@ class Road {
 
     //Road Borders
     ctx.fillStyle = 'White';
-    ctx.fillRect(0, 0, MARKER, this.world.height);
-    ctx.fillRect(this.world.width - MARKER, 0, MARKER, this.world.height);
+    ctx.fillRect(MARKER, 0, MARKER, this.world.height);
+    ctx.fillRect(this.world.width - 2 * MARKER, 0, MARKER, this.world.height);
 
     //Lanes
     //this.laneCount = Math.floor(this.world.width / (this.laneWidth + MARKER));
     this.laneWidth = Math.floor(
-      (this.world.width - 2 * MARKER) / this.laneCount
+      (this.world.width - 4 * MARKER) / this.laneCount
     );
 
     var offSet = this.y % TILE_MARKER_HEIGHT;
